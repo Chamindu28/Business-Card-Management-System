@@ -47,9 +47,113 @@ Ensure the following are installed:
 
 ---
 
-### Installation  
+### Installation
 
-1. **Clone the Repository**  
-   ```bash
-   git clone <repository_url>
-   cd <project_directory>
+1. **Clone the Repository**
+
+    ```bash
+    git clone <repository_url>
+    cd <project_directory>
+    ```
+
+2. **Install Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **Set Up the Database**
+
+    - If using **better-sqlite3**:
+
+      ```bash
+      npm run db:setup
+      ```
+
+    - If using **sql.js** (browser-compatible), no setup is needed as the database initializes in memory.
+
+4. **Start the Development Server**
+
+    ```bash
+    npm run dev
+    ```
+
+5. **Access the Application**
+    - Open your browser and navigate to: [http://localhost:3000](http://localhost:3000)
+
+6. **Default Admin Credentials**
+    - **Email**: `admin@example.com`
+    - **Password**: `admin123`
+
+## Project Structure
+
+The project is organized as follows:
+
+├── src/
+│   ├── lib/
+│   │   └── db.ts           # Database configuration
+│   ├── components/         # Reusable UI components
+│   ├── pages/              # Main application pages
+│   └── styles/             # Stylesheets (CSS/SCSS)
+├── scripts/
+│   └── setupDb.js          # Database setup script
+├── database.sqlite         # SQLite database (auto-created)
+├── package.json            # Project metadata and scripts
+└── README.md               # Project documentation
+
+
+# Available Scripts
+
+Here are the available commands you can run in your terminal:
+
+### `npm install`
+Installs all project dependencies.
+
+### `npm run db:setup`
+Initializes the database with necessary tables and data.
+
+### `npm run dev`
+Starts the development server.
+
+# Common Issues & Troubleshooting
+
+## Port Already in Use
+If you see an error saying the port is already in use, you can change the port as follows:
+
+    ```bash
+    PORT=4000 npm run dev
+    ```
+# SQLite Binding Issues (If using better-sqlite3)
+
+If you run into issues with better-sqlite3 bindings, try rebuilding the bindings:
+
+    ```bash
+    npm rebuild better-sqlite3
+    ```
+## Missing Dependencies
+
+If you encounter errors related to missing dependencies, you can resolve them by reinstalling the required packages. To do so, run the following command in your terminal:
+
+    ```bash
+    npm install
+    ```
+# 🎯 Future Enhancements
+
+## Persistent storage for sql.js
+Currently, the database is stored in memory. We plan to implement persistent storage using IndexedDB in the browser.
+
+## Integration with third-party analytics APIs
+We may integrate with services like Google Analytics or Mixpanel to gather insights.
+
+## Email notifications
+We plan to add email notifications for account updates and other events.
+
+# 📄 License
+This project is licensed under the MIT License.
+
+# 💡 Contributing
+We welcome contributions! Please feel free to submit a pull request or open an issue.
+
+# 🧑‍💻 Author
+Developed by Chamindu Hansajith.
+
