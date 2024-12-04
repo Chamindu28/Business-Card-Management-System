@@ -62,7 +62,7 @@ Ensure the following are installed:
     npm install
     ```
 
-3. **Set Up the Database**
+3. **🛠️ Set Up the Database**
 
     - If using **better-sqlite3**:
 
@@ -72,37 +72,20 @@ Ensure the following are installed:
 
     - If using **sql.js** (browser-compatible), no setup is needed as the database initializes in memory.
 
-4. **Start the Development Server**
+4. **🚀 Start the Development Server**
 
     ```bash
     npm run dev
     ```
 
-5. **Access the Application**
+5. **🌐 Access the Application**
     - Open your browser and navigate to: [http://localhost:3000](http://localhost:3000)
 
 6. **Default Admin Credentials**
     - **Email**: `admin@example.com`
     - **Password**: `admin123`
 
-## Project Structure
-
-The project is organized as follows:
-
-├── src/
-│   ├── lib/
-│   │   └── db.ts           # Database configuration
-│   ├── components/         # Reusable UI components
-│   ├── pages/              # Main application pages
-│   └── styles/             # Stylesheets (CSS/SCSS)
-├── scripts/
-│   └── setupDb.js          # Database setup script
-├── database.sqlite         # SQLite database (auto-created)
-├── package.json            # Project metadata and scripts
-└── README.md               # Project documentation
-
-
-# Available Scripts
+# ⚙️ Available Scripts
 
 Here are the available commands you can run in your terminal:
 
