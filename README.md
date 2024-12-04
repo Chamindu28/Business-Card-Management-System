@@ -106,13 +106,13 @@ The project is organized as follows:
 
 Here are the available commands you can run in your terminal:
 
-### `npm install`
+#### `npm install`
 Installs all project dependencies.
 
-### `npm run db:setup`
+#### `npm run db:setup`
 Initializes the database with necessary tables and data.
 
-### `npm run dev`
+#### `npm run dev`
 Starts the development server.
 
 # Common Issues & Troubleshooting
@@ -139,13 +139,13 @@ If you encounter errors related to missing dependencies, you can resolve them by
     ```
 # 🎯 Future Enhancements
 
-## Persistent storage for sql.js
+#### Persistent storage for sql.js
 Currently, the database is stored in memory. We plan to implement persistent storage using IndexedDB in the browser.
 
-## Integration with third-party analytics APIs
+#### Integration with third-party analytics APIs
 We may integrate with services like Google Analytics or Mixpanel to gather insights.
 
-## Email notifications
+#### Email notifications
 We plan to add email notifications for account updates and other events.
 
 # 📄 License
