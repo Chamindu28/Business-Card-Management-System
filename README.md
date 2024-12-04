@@ -85,7 +85,9 @@ Ensure the following are installed:
     - **Email**: `admin@example.com`
     - **Password**: `admin123`
 
-# ⚙️ Available Scripts
+---
+
+## ⚙️ Available Scripts
 
 Here are the available commands you can run in your terminal:
 
@@ -98,29 +100,33 @@ Initializes the database with necessary tables and data.
 #### `npm run dev`
 Starts the development server.
 
-# Common Issues & Troubleshooting
+---
 
-## Port Already in Use
+## Common Issues & Troubleshooting
+
+### Port Already in Use
 If you see an error saying the port is already in use, you can change the port as follows:
 
     ```bash
     PORT=4000 npm run dev
     ```
-# SQLite Binding Issues (If using better-sqlite3)
+### SQLite Binding Issues (If using better-sqlite3)
 
 If you run into issues with better-sqlite3 bindings, try rebuilding the bindings:
 
     ```bash
     npm rebuild better-sqlite3
     ```
-## Missing Dependencies
+### Missing Dependencies
 
 If you encounter errors related to missing dependencies, you can resolve them by reinstalling the required packages. To do so, run the following command in your terminal:
 
     ```bash
     npm install
     ```
-# 🎯 Future Enhancements
+---
+
+## 🎯 Future Enhancements
 
 #### Persistent storage for sql.js
 Currently, the database is stored in memory. We plan to implement persistent storage using IndexedDB in the browser.
@@ -131,12 +137,19 @@ We may integrate with services like Google Analytics or Mixpanel to gather insig
 #### Email notifications
 We plan to add email notifications for account updates and other events.
 
-# 📄 License
+---
+
+## 📄 License
 This project is licensed under the MIT License.
 
-# 💡 Contributing
+---
+
+## 💡 Contributing
 We welcome contributions! Please feel free to submit a pull request or open an issue.
 
-# 🧑‍💻 Author
-Developed by Chamindu Hansajith.
+---
+
+## 🧑‍💻 Author
+Developed by [Chamindu Hansajith](https://github.com/Chamindu28).
+
 
