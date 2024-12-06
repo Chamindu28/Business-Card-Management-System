@@ -1,14 +1,14 @@
-import { initDb } from './db';
+import { query } from './db';
 import bcrypt from 'bcryptjs';
 import { User } from '../types';
 
 export async function authenticateUser(email: string, password: string): Promise<User | null> {
-  const db = await initDb();
-  const result = db.exec(`
-    SELECT id, email, password, role, businessId
-    FROM users
-    WHERE email = ?
-  `, [email]);
+  const result = await query(
+    `SELECT id, email, password, role, businessId
+     FROM users
+     WHERE email = ?`,
+    [email]
+  );
 
   if (!result.length || !result[0].values.length) {
     return null;
@@ -30,17 +30,18 @@ export async function authenticateUser(email: string, password: string): Promise
 }
 
 export async function createBusinessUser(email: string, password: string, businessId: string): Promise<User | null> {
-  const db = await initDb();
   const hashedPassword = await bcrypt.hash(password, 10);
+  const userId = crypto.randomUUID();
   
   try {
-    db.run(`
-      INSERT INTO users (id, email, password, role, businessId)
-      VALUES (?, ?, ?, 'business', ?)
-    `, [crypto.randomUUID(), email, hashedPassword, businessId]);
+    await query(
+      `INSERT INTO users (id, email, password, role, businessId)
+       VALUES (?, ?, ?, 'business', ?)`,
+      [userId, email, hashedPassword, businessId]
+    );
 
     return {
-      id: crypto.randomUUID(),
+      id: userId,
       email,
       role: 'business',
       businessId
